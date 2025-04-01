@@ -7,10 +7,9 @@ ICHY is a 16-element microphone phased array designed for high-precision audio s
 
 ### Hardware
 - **Microphones**: 16 MEMS microphones with matched frequency response
-- **Geometry**: Circular array configuration for 360° coverage
+- **Geometry**: Square array of 4x4 microphones
 - **Spacing**: λ/2 spacing to prevent spatial aliasing at target frequencies
 - **ADC**: Simultaneous sampling across all channels
-- **Processing Unit**: FPGA or high-performance MCU for real-time processing
 
 ### Signal Processing
 - **Beamforming Algorithm**: Delay-and-sum with optional adaptive algorithms
