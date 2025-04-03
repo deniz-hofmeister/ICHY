@@ -46,4 +46,4 @@ The IM73D122 was selected for the 16-element microphone array due to:
 
 ## Additional Resources
 - [Infineon XENSIV™ Sensor Solutions Catalog 2024](https://www.infineon.com/dgdl/Infineon-xensiv_sensor_solutions_2024-ProductSelectionGuide-v01_00-EN.pdf?fileId=5546d462636cc8fb0164229c09f51bbe&da=t)
-- [IM73D122 Datasheet](https://www.infineon.com/cms/en/product/sensor/mems-microphones/mems-microphones-for-consumer/im73d122/) - Link to be updated when available
+- [IM73D122 Datasheet](https://www.infineon.com/cms/en/product/sensor/mems-microphones/mems-microphones-for-consumer/im73d122/)
