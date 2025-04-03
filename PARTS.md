@@ -34,6 +34,43 @@ The IM73D122 was selected for the 16-element microphone array due to:
 
 ## Data Acquisition & Processing Components
 
+### PDM to TDM Conversion Options
+
+#### Option 1: Texas Instruments PCMD3180/PCMD3180-Q1
+- **Description**: 8-Channel Audio Analog-to-Digital Converter (PDM to TDM/I2S)
+- **Channels**: 8 PDM microphones simultaneous conversion
+- **Output Format**: TDM, I2S, or left-justified (LJ) formats (compatible with Jetson platform)
+- **Sampling Rate**: 8kHz to 768kHz programmable output sample rate
+- **Package Size**: 24-pin WQFN package
+- **Power Consumption**: 2.5mW/channel at 48kHz sample rate (1.8V supply)
+- **Special Features**: 127dB dynamic range, programmable digital volume control, microphone bias voltage, phase-locked loop (PLL), programmable high-pass filter, bi-quad filters, low-latency filter modes
+- **Temperature Range**: –40°C to +125°C
+- **Supplier Link**: https://www.mouser.co.uk/new/texas-instruments/ti-pcmd3180-audio-adc/
+
+#### Option 2: Analog Devices ADAU7118
+- **Description**: PDM to TDM audio converter
+- **Channels**: [Number of PDM channels]
+- **Output Format**: TDM compatible with Jetson platform
+- **Sampling Rate**: [Supported sampling rates]
+- **Package Size**: [Package dimensions]
+- **Power Consumption**: [Power specifications]
+- **Special Features**: [Key features]
+- **Price Range**: [Approximate cost]
+- **Supplier Link**: https://www.mouser.co.uk/new/analog-devices/adi-adau7118-converter/
+
+#### Comparison Table
+
+| Feature | TI PCMD3180 | ADI ADAU7118 |
+|---------|------------|-------------|
+| Channels | [# channels] | [# channels] |
+| Sampling Rates | [rates] | [rates] |
+| Package Size | [dimensions] | [dimensions] |
+| Power | [consumption] | [consumption] |
+| Key Advantage | [unique selling point] | [unique selling point] |
+| Price | [cost] | [cost] |
+
+*Note: Complete specifications need to be filled in from datasheets. Detailed comparison to be updated once datasheets are reviewed.*
+
 ### Clock Distribution
 - TBD: Precision clock distribution network for synchronizing all 16 microphones
 
