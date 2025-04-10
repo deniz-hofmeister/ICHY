@@ -48,32 +48,104 @@ The IM73D122 was selected for the 16-element microphone array due to:
 - **Supplier Link**: https://www.mouser.co.uk/new/texas-instruments/ti-pcmd3180-audio-adc/
 
 #### Option 2: Analog Devices ADAU7118
-- **Description**: PDM to TDM audio converter
-- **Channels**: [Number of PDM channels]
-- **Output Format**: TDM compatible with Jetson platform
-- **Sampling Rate**: [Supported sampling rates]
-- **Package Size**: [Package dimensions]
-- **Power Consumption**: [Power specifications]
-- **Special Features**: [Key features]
-- **Price Range**: [Approximate cost]
+- **Description**: 8-Channel PDM to TDM/I2S audio converter
+- **Channels**: 8 PDM microphones (4 stereo pairs)
+- **Output Format**: I2S or TDM (up to TDM-16) compatible with Jetson platform
+- **Sampling Rate**: 4kHz to 192kHz output sampling rate
+- **Package Size**: 16-lead, 3mm × 3mm, 0.50mm pitch LFCSP
+- **Power Consumption**: 1.2mA operating current for 8 channels at 48kHz (1.8V supply)
+- **Special Features**: 126dB A-weighted SNR, 24-bit resolution, selectable I2C control, configurable TDM slot routing, dual PDM clock outputs, automatic PDM clock generation
+- **Temperature Range**: -40°C to +85°C
+- **Supply Voltage**: I/O (1.70V to 3.63V), DVDD (1.10V to 1.98V)
 - **Supplier Link**: https://www.mouser.co.uk/new/analog-devices/adi-adau7118-converter/
 
-### Option 3: file:///home/deniz/Downloads/TSDP18xx_DS.pdf 
-
-TBD
+#### Option 3: Tempo Semiconductor TSDP18xx
+- **Description**: Octal PDM to TDM/I2S converter (8-Channel DMIC Aggregator)
+- **Channels**: 8 PDM microphones
+- **Output Format**: I2S (1 or 2 channels), Left-Justified (1 or 2 channels), or TDM (1-8 channels)
+- **Sampling Rate**: 8kHz to 384kHz output sampling rate
+- **Resolution**: 16-bit or 24-bit Linear PCM
+- **Power Consumption**: Ultra-low power (<1μA in standby)
+- **Special Features**: >142dB SNR, 6th order 24-bit filtering, flexible oversampling options (32x to 512x), supports SCLK polarity inversion, configurable FRMCLK widths
+- **Supply Voltage**: IOVDD (1.8V or 3.3V), DVDD (1.8V)
+- **Supplier Link**: https://temposemi.com/wp-content/uploads/2019/09/TSDP18xx_DS.pdf
 
 #### Comparison Table
 
-| Feature | TI PCMD3180 | ADI ADAU7118 |
-|---------|------------|-------------|
-| Channels | [# channels] | [# channels] |
-| Sampling Rates | [rates] | [rates] |
-| Package Size | [dimensions] | [dimensions] |
-| Power | [consumption] | [consumption] |
-| Key Advantage | [unique selling point] | [unique selling point] |
-| Price | [cost] | [cost] |
+| Feature | TI PCMD3180 | ADI ADAU7118 | Tempo TSDP18xx |
+|---------|------------|-------------|---------------|
+| Channels | 8 PDM microphones | 8 PDM microphones (4 stereo pairs) | 8 PDM microphones |
+| Sampling Rates | 8kHz to 768kHz | 4kHz to 192kHz | 8kHz to 384kHz |
+| Resolution | N/A | 24-bit | 16-bit or 24-bit |
+| Package Size | 24-pin WQFN | 16-lead, 3mm × 3mm LFCSP | N/A |
+| Power | 2.5mW/channel @ 48kHz | 1.2mA total @ 48kHz (1.8V) | <1μA standby |
+| SNR | 127dB dynamic range | 126dB A-weighted SNR | >142dB |
+| Temperature Range | -40°C to +125°C | -40°C to +85°C | N/A |
+| Output Formats | TDM, I2S, LJ | I2S or TDM (up to TDM-16) | I2S, LJ, TDM (1-8 channels) |
+| Key Advantage | Highest sampling rate, wider temp range | Lower power, smaller package | Highest SNR, ultra-low power |
+| Special Features | HPF, bi-quad filters | Dual PDM clocks | 6th order filtering, flexible oversampling |
 
-*Note: Complete specifications need to be filled in from datasheets. Detailed comparison to be updated once datasheets are reviewed.*
+### PDM to TDM Converter Selection Analysis
+
+After evaluating all three options, we've carefully considered the requirements for connecting 16 Infineon IM73D122 PDM microphones to an NVIDIA Jetson platform. Since each converter chip can handle 8 PDM inputs, two chips will be required regardless of which solution is chosen.
+
+#### TI PCMD3180 Analysis
+**Pros:**
+- Highest maximum sampling rate (768kHz) providing significant headroom
+- Wide temperature range (-40°C to +125°C) for operation in varied environments
+- 127dB dynamic range, well above the microphones' 73dB SNR
+- Comprehensive filtering options (HPF, bi-quad filters)
+
+**Cons:**
+- Higher power consumption (2.5mW/channel)
+- Larger package size (24-pin WQFN)
+- More complex implementation compared to alternatives
+
+#### ADI ADAU7118 Analysis
+**Pros:**
+- Lowest specified active power consumption (1.2mA total for 8 channels)
+- Smallest package size (3mm × 3mm LFCSP) optimizing PCB space
+- Automatic PDM clock generation simplifies design
+- Dual PDM clock outputs beneficial for synchronization
+- TDM-16 support enables efficient interface to the Jetson platform
+- 126dB SNR exceeds microphone specifications by a wide margin
+
+**Cons:**
+- Lower maximum sampling rate than alternatives (though 192kHz is still more than adequate)
+- Narrower temperature range than the TI option (-40°C to +85°C)
+
+#### Tempo TSDP18xx Analysis
+**Pros:**
+- Highest SNR (>142dB) of all options
+- Excellent standby power consumption (<1μA)
+- Flexible oversampling options (32x to 512x)
+- 6th order 24-bit filtering
+
+**Cons:**
+- Active power consumption not clearly specified
+- Package size not specified
+- Less detailed documentation available compared to TI and ADI offerings
+
+#### Final Selection: ADI ADAU7118
+
+We have selected the ADI ADAU7118 as the optimal PDM to TDM converter for this application for the following reasons:
+
+1. **Power Efficiency**: The ADAU7118 provides the lowest specified active power consumption, which is critical for a 16-element array that requires two converter chips.
+
+2. **Compact Design**: The smallest package size (3mm × 3mm) enables a more compact microphone array design.
+
+3. **Simplified Implementation**: 
+   - Automatic PDM clock generation reduces design complexity
+   - Dual PDM clock outputs simplify microphone synchronization
+   - TDM-16 support creates a more standardized interface to the Jetson processor
+
+4. **Adequate Performance**: The 126dB SNR and 192kHz maximum sampling rate significantly exceed our requirements for the 1kHz-8kHz target frequency range.
+
+5. **Interface Efficiency**: The TDM-16 capability allows both chips to have their outputs potentially combined into a single synchronized data stream, simplifying the connection to the Jetson platform.
+
+6. **System Integration**: The automatic features and well-documented specifications facilitate integration with the other components in the system.
+
+While the TSDP18xx offers superior SNR and the PCMD3180 provides higher maximum sampling rates, these advantages aren't necessary given the microphones' specifications and the project's target frequency range. The ADAU7118 provides the optimal balance of power efficiency, form factor, simplicity, and performance for this application.
 
 ### Clock Distribution
 - TBD: Precision clock distribution network for synchronizing all 16 microphones
