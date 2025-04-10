@@ -58,6 +58,10 @@ The IM73D122 was selected for the 16-element microphone array due to:
 - **Price Range**: [Approximate cost]
 - **Supplier Link**: https://www.mouser.co.uk/new/analog-devices/adi-adau7118-converter/
 
+### Option 3: file:///home/deniz/Downloads/TSDP18xx_DS.pdf 
+
+TBD
+
 #### Comparison Table
 
 | Feature | TI PCMD3180 | ADI ADAU7118 |
