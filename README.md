@@ -1,12 +1,12 @@
-# ICHY - 16-Element Microphone Phased Array
+# ICHY - 8-Element Microphone Phased Array
 
 ## Project Overview
-ICHY is a 16-element microphone phased array designed for high-precision audio source localization and beamforming. This document outlines the key design considerations, components, and implementation approach.
+ICHY is a 8-element microphone phased array designed for high-precision audio source localization and beamforming. This document outlines the key design considerations, components, and implementation approach.
 
 ## Key Design Elements
 
 ### Hardware
-- **Microphones**: 16 MEMS microphones with matched frequency response
+- **Microphones**: 8 MEMS microphones with matched frequency response
 - **Geometry**: Square array of 4x4 microphones
 - **Spacing**: λ/2 spacing to prevent spatial aliasing at target frequencies
 - **ADC**: Simultaneous sampling across all channels
@@ -33,7 +33,7 @@ ICHY is a 16-element microphone phased array designed for high-precision audio s
 ### Minimal Hardware Configuration for Jetson Processing
 
 #### Essential Hardware Components
-- **Microphones**: 16 digital MEMS microphones (I2S/PDM output)
+- **Microphones**: 8 digital MEMS microphones (I2S/PDM output)
 - **Clock Source**: Single master clock with distribution network to ensure phase alignment
 - **Audio Codec/Interface**: Audio interface with multi-channel input capabilities
 - **Physical Array Structure**: Precise physical positioning framework for microphones
