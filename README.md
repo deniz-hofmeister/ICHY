@@ -111,3 +111,6 @@ ICHY is a 8-element microphone phased array designed for high-precision audio so
 ## References
 - Key academic papers and resources for phased array design
 - Component datasheets and reference implementations
+
+## Developer Guide
+- https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/SD/Communications/AudioSetupAndDevelopment.html
