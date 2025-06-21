@@ -7,7 +7,7 @@
         "apply_defaults_to_fp_shapes": false,
         "apply_defaults_to_fp_text": false,
         "board_outline_line_width": 0.05,
-        "copper_line_width": 0.2,
+        "copper_line_width": 0.254,
         "copper_text_italic": false,
         "copper_text_size_h": 1.5,
         "copper_text_size_v": 1.5,
@@ -187,7 +187,8 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.254
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -481,7 +482,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.254,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
@@ -496,7 +497,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 0.254,
         "via_diameter": 0.6,
         "via_drill": 0.3
       }
