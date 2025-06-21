@@ -1,4 +1,4 @@
-1078309718434552
+1080060237374303
 Capacitor_SMD
 CP_Elec_3x5.3
 SMT capacitor, aluminium electrolytic, 3x5.3, Cornell Dubilier Electronics 
@@ -2670,6 +2670,13 @@ Library
 MountingHole_2.2mm_M2_ISO14580
 Mounting Hole 2.2mm, no annular, M2, ISO14580
 mounting hole 2.2mm no annular m2 iso14580
+0
+0
+0
+Library
+MountingHole_4.3mm_M4_ISO14580
+Mounting Hole 4.3mm, no annular, M4, ISO14580
+mounting hole 4.3mm no annular m4 iso14580
 0
 0
 0
