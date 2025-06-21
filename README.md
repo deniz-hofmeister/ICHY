@@ -111,6 +111,9 @@ ICHY is a 8-element microphone phased array designed for high-precision audio so
 ### 3D View
 ![3D View of PCB](3d_view_pcb.jpg)
 
+### Left side of the PCB, right is mirrored
+![Left side PCB](left_wing_pcb.png)
+
 ## Next Steps
 - Detailed microphone selection and array geometry calculation
 - Electronics design and component selection
