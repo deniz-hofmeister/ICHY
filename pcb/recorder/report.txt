@@ -1,0 +1,6 @@
+Front (top side) placement file: '/home/deniz/repos/recorder/recorder/recorder-top.pos'.
+Info: Component count: 37.
+Back (bottom side) placement file: '/home/deniz/repos/recorder/recorder/recorder-bottom.pos'.
+Info: Component count: 0.
+Info: Full component count: 37.
+Info: Done.

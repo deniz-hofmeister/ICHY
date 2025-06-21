@@ -1,0 +1,12 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"R9";"R_0603_1608Metric";1;"10000";;;
+2;"C13";"C_0603_1608Metric";1;"4700nF";;;
+3;"R14,R13,R12";"R_0603_1608Metric";3;"22";;;
+4;"U7,U5,U4,U8,U1,U9,U6,U3";"IM73D122V01";8;"IM73D122V01";;;
+5;"C11,C10,C4,C2,C5,C9,C8,C6,C1,C7,C3";"C_0603_1608Metric";11;"220nF";;;
+6;"J1";"PinHeader_2x20_P2.54mm_Vertical";1;"GPIO_Conn_02x20_Odd_Even";;;
+7;"R6,R8,R3,R5,R7,R1,R4,R2";"R_0603_1608Metric";8;"100";;;
+8;"U2";"LFCSP-16";1;"ADAU7118";;;
+9;"C14";"C_0603_1608Metric";1;"10uF";;;
+10;"C12";"C_0603_1608Metric";1;"1uF";;;
+11;"U10";"RGW0020A-IPC_A";1;"TPS7A4700RGWT";;;
