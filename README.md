@@ -100,6 +100,17 @@ ICHY is a 8-element microphone phased array designed for high-precision audio so
 - **Isolation**: Digital/analog domain isolation to prevent noise coupling
 - **Thermal Design**: Heat dissipation strategy for continuous operation
 
+## Design Artifacts
+
+### PCB Design
+![PCB Layout Screenshot](pcb_layout_screenshot.png)
+
+### Schematic
+![Schema Diagram](schema.png)
+
+### 3D View
+![3D View of PCB](3d_view_pcb.jpg)
+
 ## Next Steps
 - Detailed microphone selection and array geometry calculation
 - Electronics design and component selection
